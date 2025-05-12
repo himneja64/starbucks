@@ -109,7 +109,7 @@ function floatingObject(selector, delay, size) {
       y: size,
       repeat: -1,
       yoyo: true,
-      ease: "power1.inOut", // 강의 내에서는 큰 따옴표 없이 표기 했으나, 동작 안되어 넣으니 됨. 아마 gsap 버전의 차이가 불러온 오류가 아닌가 싶음.. 이해는 안가는데 일단 동작이 됨.
+      ease: "power1.inOut",
       delay: random(0, delay)
     }
   );
