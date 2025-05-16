@@ -11,10 +11,10 @@
 <br/>
 
 ## 📌주요 기능
+- 오픈 그래프 (Open Graph)
+- youtube API
+- 배너와 위로 가기 버튼
 - 로그인 페이지(페이지링크) 구현
-- 오픈 카드?
-- 배너 온오프
-- youtube 링크 가져오기
 - 연도 생성
 - 추가작성 예정
 
@@ -34,7 +34,159 @@
 
 ## ⌨코드 살펴보기
 
-### 1. 기능💻
+### 1. 오픈 그래프💻
+<details>
+	<summary><b>💛적용 구간 보기</b></summary>
+	<table>
+		<tr>
+			<td> 콘텐츠 공유시 화면 </td>
+		</tr>
+		<tr>
+			<td><img src="https://github.com/user-attachments/assets/557b93f7-2f0c-4bf3-ae8b-7ea61dcea029" alt="open graph view" /></td>
+		</tr>
+	</table>
+</details>
+
+```html
+<meta property="og:type" content="콘텐츠 유형" />
+<meta property="og:site_name" content="Starbucks" />
+<meta property="og:title" content="콘텐츠 제목" />
+<meta property="og:description" content="페이지 설명" />
+<meta property="og:image" content="미리보기 이미지 url" />
+<meta property="og:url" content="주소" />
+```
+
+> [!NOTE]  
+> 웹 페이지의 메타데이터를 정의하는 프로토콜로, 사용자에게 미리보기를 제공함으로써
+> 클릭하고자 하는 내용이 무엇인지 짐작할 수 있도록 합니다.
+
+<br/>
+
+### 2. Youtube Api💻
+<details>
+	<summary><b>💛적용 구간 보기</b></summary>
+	<table>
+		<tr>
+			<td>API 적용</td>
+		</tr>
+		<tr>
+			<td><img src="https://github.com/user-attachments/assets/7ded9b17-65c6-43bb-ace0-11482c1b89e5" alt="youtube api" /></td>
+		</tr>
+	</table>
+</details>
+
+```javascript
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady() {
+	new YT.Player('player', {
+		videoId: '최초 재생할 유튜브 영상 ID',
+		playerVars: {
+			autoplay: true,
+			loop: true,
+			playlist: '반복 재생할 유튜브 영상 ID 목록'
+		},
+		events: {
+			onReady: function (event) {
+				event.target.mute()
+			}
+		}
+	});
+}
+```
+
+> [!NOTE]    
+> 해당 코드는 아래와 같은 단계로 페이지 내에 영상을 삽입하는 기능을 수행합니다.
+> 
+> 1. `document.createElement('script')`로 새로운 script 태그를 생성합니다.
+> 1. `tag.src`로 API의 URL을 설정합니다.
+> 1. `firstScriptTag`는 현재 문서의 첫 번째 script를 찾습니다.
+> 1. `insertBefore()`는 생성한 script를 첫 번째 script 앞에 삽입, API를 로드합니다.
+>
+> 이후에는 `onYouTubeIframeAPIReady` 통해 비디오를 호출하고, 기타 필요한 기능을 제어합니다.
+
+<br/>
+
+### 3. 배너와 위로 가기 버튼💻
+<details>
+	<summary><b>💛적용 구간 보기</b></summary>
+	<table>
+		<tr>
+			<td>배너</td><td>위로 가기 버튼</td>
+		</tr>
+		<tr>
+			<td><video src="https://github.com/user-attachments/assets/cff634bf-fb81-4b51-b90d-ab9d50070dca" alt="banner" /></td><td><video src="https://github.com/user-attachments/assets/eda9da4c-3568-40b4-a238-0ed869617b24" alt="top button" /></td>
+		</tr>
+	</table>
+</details>
+
+```javascript
+const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
+
+window.addEventListener('scroll', _.throttle(function () {
+  console.log(window.scrollY);
+  if (window.scrollY > 500) {
+    gsap.to(badgeEl, .6, {
+      opacity: 0,
+      display: 'none'
+    });
+    gsap.to(toTopEl, .2, {
+      x: 0
+    });
+  } else {
+    gsap.to(badgeEl, .6, {
+      opacity: 1,
+      display: 'block'
+    });
+        gsap.to(toTopEl, .2, {
+          x: 100
+        });
+  }
+}, 300));
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, {
+    scrollTo: 0
+  });
+});
+```
+
+> [!NOTE]  
+> GSAP와 Lodash의 `_.throttle`를 이용하여 배너와 위로 가기 버튼을 구현했습니다.
+>
+> `_.throttle`를 활용하여 가독성과 효율성을 높였습니다.
+
+<br/>
+
+### 4. 기능💻
+<details>
+	<summary><b>💛적용 구간 보기</b></summary>
+	<table>
+		<tr>
+			<td>동작 이전</td><td>동작 이후</td>
+		</tr>
+		<tr>
+			<td><img src="이미지 주소" alt="이미지 이름" /></td><td><img src="이미지 주소" alt="이미지 이름" /></td>
+		</tr>
+	</table>
+</details>
+
+```javascript
+	const thisYear = document.querySelector('.this-year');
+  thisYear.textContent = new Date().getFullYear();
+```
+
+> [!NOTE]  
+> 설명을 작성합니다.
+
+<br/>
+	
+### 5. 기능💻
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
@@ -57,28 +209,7 @@
 
 <br/>
 
-### 2. 기능💻
-<details>
-	<summary><b>💛적용 구간 보기</b></summary>
-	<table>
-		<tr>
-			<td>동작 이전</td><td>동작 이후</td>
-		</tr>
-		<tr>
-			<td><img src="이미지 주소" alt="이미지 이름" /></td><td><img src="이미지 주소" alt="이미지 이름" /></td>
-		</tr>
-	</table>
-</details>
-
-```javascript
-	const thisYear = document.querySelector('.this-year');
-  thisYear.textContent = new Date().getFullYear();
-```
-
-> [!NOTE]  
-> 설명을 작성합니다.
-
-<br/>### 3. 기능💻
+### 6. 기능💻
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
