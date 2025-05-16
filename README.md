@@ -14,8 +14,8 @@
 - 오픈 그래프 (Open Graph)
 - youtube API
 - 배너와 위로 가기 버튼
-- 로그인 페이지(페이지링크) 구현
 - 연도 생성
+- 로그인 페이지
 
 <br/>
 
@@ -33,7 +33,7 @@
 
 ## ⌨코드 살펴보기
 
-### 1. 오픈 그래프💻
+### 1. 오픈 그래프📱
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
@@ -61,7 +61,7 @@
 
 <br/>
 
-### 2. Youtube Api💻
+### 2. Youtube Api🎞
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
@@ -110,7 +110,7 @@ function onYouTubeIframeAPIReady() {
 
 <br/>
 
-### 3. 배너와 위로 가기 버튼💻
+### 3. 배너와 위로 가기 버튼⬆
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
@@ -162,31 +162,8 @@ toTopEl.addEventListener('click', function () {
 > 해당 함수는 지정된 시간 동안 함수를 한 번만 호출하도록 제한하기 때문에, 과도한 트래픽을 예방하여 성능 최적화에 도움이 됩니다.
 
 <br/>
-
-### 4. 로그인 페이지(페이지링크) 구현💌
-<details>
-	<summary><b>💛적용 구간 보기</b></summary>
-	<table>
-		<tr>
-			<td>동작 이전</td><td>동작 이후</td>
-		</tr>
-		<tr>
-			<td><img src="이미지 주소" alt="이미지 이름" /></td><td><img src="이미지 주소" alt="이미지 이름" /></td>
-		</tr>
-	</table>
-</details>
-
-```javascript
-	const thisYear = document.querySelector('.this-year');
-  thisYear.textContent = new Date().getFullYear();
-```
-
-> [!NOTE]  
-> 설명을 작성합니다.
-
-<br/>
 	
-### 5. 연도 생성📅
+### 4. 연도 생성📅
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
