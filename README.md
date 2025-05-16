@@ -16,7 +16,6 @@
 - 배너와 위로 가기 버튼
 - 로그인 페이지(페이지링크) 구현
 - 연도 생성
-- 추가작성 예정
 
 <br/>
 
@@ -160,10 +159,11 @@ toTopEl.addEventListener('click', function () {
 > GSAP와 Lodash의 `_.throttle`를 이용하여 배너와 위로 가기 버튼을 구현했습니다.
 >
 > `_.throttle`를 활용하여 가독성과 효율성을 높였습니다.
+> 해당 함수는 지정된 시간 동안 함수를 한 번만 호출하도록 제한하기 때문에, 과도한 트래픽을 예방하여 성능 최적화에 도움이 됩니다.
 
 <br/>
 
-### 4. 기능💻
+### 4. 로그인 페이지(페이지링크) 구현💌
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
@@ -186,15 +186,15 @@ toTopEl.addEventListener('click', function () {
 
 <br/>
 	
-### 5. 기능💻
+### 5. 연도 생성📅
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
 		<tr>
-			<td>동작 이전</td><td>동작 이후</td>
+			<td>카피라이트의 연도 자동 업데이트</td>
 		</tr>
 		<tr>
-			<td><img src="이미지 주소" alt="이미지 이름" /></td><td><img src="이미지 주소" alt="이미지 이름" /></td>
+			<td><img src="https://github.com/user-attachments/assets/67d220ff-4bd4-4aeb-b4c8-9aab9d2eec76" alt="count year" /></td>
 		</tr>
 	</table>
 </details>
@@ -203,32 +203,6 @@ toTopEl.addEventListener('click', function () {
 	const thisYear = document.querySelector('.this-year');
   thisYear.textContent = new Date().getFullYear();
 ```
-
-> [!NOTE]  
-> 설명을 작성합니다.
-
-<br/>
-
-### 6. 기능💻
-<details>
-	<summary><b>💛적용 구간 보기</b></summary>
-	<table>
-		<tr>
-			<td>동작 이전</td><td>동작 이후</td>
-		</tr>
-		<tr>
-			<td><img src="이미지 주소" alt="이미지 이름" /></td><td><img src="이미지 주소" alt="이미지 이름" /></td>
-		</tr>
-	</table>
-</details>
-
-```javascript
-	const thisYear = document.querySelector('.this-year');
-  thisYear.textContent = new Date().getFullYear();
-```
-
-> [!NOTE]  
-> 설명을 작성합니다.
 
 <br/>
 
