@@ -110,7 +110,7 @@ function onYouTubeIframeAPIReady() {
 
 <br/>
 
-### 3. 배너와 위로 가기 버튼⬆
+### 3. 배너와 위로 가기 버튼🔝
 <details>
 	<summary><b>💛적용 구간 보기</b></summary>
 	<table>
