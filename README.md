@@ -1,6 +1,6 @@
 <div align="center">
 	<h1>starbucks</h1>
-	<h3><a href="https://himneja64.github.io/design_portfolio1](https://vermillion-rugelach-58bcab.netlify.app" />💻사이트 이동하기💻</a></h3>
+	<h3><a href=https://himneja64.github.io/design_portfolio1](https://vermillion-rugelach-58bcab.netlify.app />💻사이트 이동하기💻</a></h3>
 	<p>HTML, CSS, Emmit, Js Libraries 및 bundler를 활용하여 작업한 웹페이지입니다.</p>
 </div>
 <br/>
